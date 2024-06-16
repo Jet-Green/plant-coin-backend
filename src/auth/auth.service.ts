@@ -9,7 +9,7 @@ export class AuthService {
   async login(user: any) {
     let candidate = await this.UserModel.findOne({ telegramId: user.id })
     if (!candidate) {
-      return this.UserModel.create({ telegramId: user.id, name: user.username })
+      return this.UserModel.create({ telegramId: user.id, username: user.username })
     }
     return candidate
   }
