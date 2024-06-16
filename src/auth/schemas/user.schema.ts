@@ -8,7 +8,7 @@ export class UserClass {
   @Prop({
     type: String,
   })
-  name: string
+  username: string
 
   @Prop({
     type: String,
