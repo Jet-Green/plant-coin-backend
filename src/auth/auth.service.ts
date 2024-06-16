@@ -6,7 +6,7 @@ import mongoose, { Model } from 'mongoose';
 @Injectable()
 export class AuthService {
   constructor(@InjectModel('User') private UserModel: Model<UserClass>,) { }
-  login(user: any) {
-    return this.UserModel.create({ telegramId: user.id })
+  login(user: any) {    
+    return this.UserModel.create({ telegramId: user.id, name: user.name })
   }
 }
