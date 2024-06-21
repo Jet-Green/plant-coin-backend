@@ -14,10 +14,15 @@ export class UserClass {
     type: String,
   })
   telegramId: string
-  
+
   @Prop({
     type: Number
   })
   tokenCount: number
+  
+  @Prop({
+    type: Number
+  })
+  level: number
 }
 export const UserSchema = SchemaFactory.createForClass(UserClass)

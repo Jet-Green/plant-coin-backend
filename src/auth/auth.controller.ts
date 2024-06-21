@@ -21,4 +21,16 @@ export class AuthController {
   }) {
     return this.authService.setTokenCount(body)
   }
+    /**
+     * accepts current level and user's telegram id
+     * @param body 
+     * @returns updated user doc
+     */
+  @Patch('level')
+  async setLevel(@Body() body: {
+    level: Number
+    telegramId: String,
+  }) {
+    return this.authService.setLevel(body)
+  }
 }

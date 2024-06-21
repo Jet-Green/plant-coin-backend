@@ -16,4 +16,7 @@ export class AuthService {
   async setTokenCount({ count, telegramId }) {
     return await this.UserModel.findOneAndUpdate({ telegramId }, { $set: { tokenCount: count } }, { new: true })
   }
+  async setLevel({ level, telegramId }) {
+    return await this.UserModel.findOneAndUpdate({ telegramId }, { $set: { level } }, { new: true })
+  }
 }
