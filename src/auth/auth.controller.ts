@@ -6,7 +6,10 @@ export class AuthController {
   constructor(private readonly authService: AuthService) { }
 
   @Post()
-  async create(@Body() user: any) {
+  async login(@Body() user: {
+    telegramId: String,
+    username: String
+  }) {
     return this.authService.login(user)
   }
   /**
@@ -21,11 +24,11 @@ export class AuthController {
   }) {
     return this.authService.setTokenCount(body)
   }
-    /**
-     * accepts current level and user's telegram id
-     * @param body 
-     * @returns updated user doc
-     */
+  /**
+   * accepts current level and user's telegram id
+   * @param body 
+   * @returns updated user doc
+   */
   @Patch('level')
   async setLevel(@Body() body: {
     level: Number
