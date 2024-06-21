@@ -13,4 +13,7 @@ export class AuthService {
     }
     return candidate
   }
+  async setTokenCount({ count, telegramId }) {
+    return await this.UserModel.findOneAndUpdate({ telegramId }, { $set: { tokenCount: count } }, { new: true })
+  }
 }

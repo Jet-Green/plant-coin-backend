@@ -9,4 +9,16 @@ export class AuthController {
   async create(@Body() user: any) {
     return this.authService.login(user)
   }
+  /**
+   * accepts current count of tokens and user's telegram id
+   * @param body 
+   * @returns updated user doc
+   */
+  @Post()
+  async setTokenCount(@Body() body: {
+    count: Number,
+    telegramId: String
+  }) {
+    return this.authService.setTokenCount(body)
+  }
 }
