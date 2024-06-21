@@ -14,7 +14,7 @@ export class AuthController {
    * @param body 
    * @returns updated user doc
    */
-  @Post()
+  @Patch('token-count')
   async setTokenCount(@Body() body: {
     count: Number,
     telegramId: String
